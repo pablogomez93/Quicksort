@@ -51,7 +51,7 @@ int main(int argsSize, char* args[]) {
 
         int i;
         for (i = 1; i <= n; ++i)
-            array[i-1] = *args[i] - '0';
+            array[i-1] = (int) strtol(args[i], &args[i], 10);
 
     }
 
