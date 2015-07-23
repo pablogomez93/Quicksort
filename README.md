@@ -1,1 +1,1 @@
-# Quicksort
+# Quicksort, sorting algorithm.
