@@ -4,12 +4,11 @@ typedef unsigned int uint;
 
 void printCollection(int* collection, uint n){
     int i;
-    for (i = 0; i < n; ++i)
-        printf("%d ", collection[i]);
+    for (i = 0; i < n; ++i) printf("%d ", collection[i]);
     printf("\n");
 }
 
-void QuickSort(int* array, uint n) {
+int* QuickSort(int* array, uint n) {
     if(n < 2) return;
 
     int pivot = array[rand() % n];
@@ -36,12 +35,12 @@ void QuickSort(int* array, uint n) {
     QuickSort(array, right+1);
     QuickSort(&array[left], n-left);
 
-    return;
+    return array;
 }
 
 
 int main(int argsSize, char* args[]) {
-	/* 
+	/*
 	 * Charging the array to sort.
 	 * Define n as total size of the array and divide it by the size of one
 	 * element of it. It's a kind of hack to find the length of the array.
@@ -55,11 +54,11 @@ int main(int argsSize, char* args[]) {
 	 * If you don't pass arguments to sort, this program will sort the array
 	 * charged manually above.
 	 *
-	 * Example: 
+	 * Example:
 	 *	$ make all
 	 *  $ ./quicksort 5 7 8 6 69 18782 9
 	 *
-	 *  Then Quick Sort will sort the array [5, 7, 8, 6, 69, 18782, 9] 
+	 *  Then Quick Sort will sort the array [5, 7, 8, 6, 69, 18782, 9]
 	 */
 	if(argsSize > 1) {
         n = argsSize-1;
@@ -74,7 +73,7 @@ int main(int argsSize, char* args[]) {
     //Finally, sort the collection with Quick Sort Algorithm
     QuickSort(array, n);
 
-    //Send to the standar output the sorted array 
+    //Send to the standar output the sorted array
     printCollection(array, n);
 
 	return 0;
