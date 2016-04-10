@@ -60,7 +60,7 @@ int main(int argsSize, char* args[]) {
 	 *
 	 *  Then Quick Sort will sort the array [5, 7, 8, 6, 69, 18782, 9]
 	 */
-	if(argsSize > 1) {
+    if(argsSize > 1) {
         n = argsSize-1;
         array[n];
 
